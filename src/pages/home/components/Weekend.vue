@@ -2,7 +2,7 @@
   <div>
     <div class="recommed-title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="recommedItem in recommedList" :key="recommedItem.id">
+      <li class="item border-bottom" v-for="recommedItem in list" :key="recommedItem.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="recommedItem.imgUrl" />
         </div>
@@ -20,28 +20,10 @@ export default {
   name: 'HomeWeekend',
   data () {
     return {
-      recommedList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '北京赏花好地方',
-        desc: '乱花渐欲迷人眼，京城赏花大搜索'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '北京赏花好地方',
-        desc: '乱花渐欲迷人眼，京城赏花大搜索'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '北京赏花好地方',
-        desc: '乱花渐欲迷人眼，京城赏花大搜索'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1603/6d/2f67ae0659f41f.jpg_r_640x214_bf6cbd0b.jpg',
-        title: '北京赏花好地方',
-        desc: '乱花渐欲迷人眼，京城赏花大搜索'
-      }]
     }
+  },
+  props: {
+    list: Array
   }
 }
 </script>
@@ -49,7 +31,6 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
   .recommed-title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem

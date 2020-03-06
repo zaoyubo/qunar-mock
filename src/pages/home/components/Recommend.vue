@@ -2,7 +2,7 @@
   <div>
     <div class="recommed-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="recommedItem in recommedList" :key="recommedItem.id">
+      <li class="item border-bottom" v-for="recommedItem in list" :key="recommedItem.id">
         <img class="item-img" :src="recommedItem.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{recommedItem.title}}</p>
@@ -19,28 +19,10 @@ export default {
   name: 'HomeRecommend',
   data () {
     return {
-      recommedList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/ce/ce94534274b3bd6db4.water.jpg_200x200_91a2f180.jpg',
-        title: '清华大学',
-        desc: '北京市海淀区,北京高等学府'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/ce/ce94534274b3bd6db4.water.jpg_200x200_91a2f180.jpg',
-        title: '清华大学',
-        desc: '北京市海淀区,北京高等学府'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/ce/ce94534274b3bd6db4.water.jpg_200x200_91a2f180.jpg',
-        title: '清华大学',
-        desc: '北京市海淀区,北京高等学府'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1607/ce/ce94534274b3bd6db4.water.jpg_200x200_91a2f180.jpg',
-        title: '清华大学',
-        desc: '北京市海淀区,北京高等学府'
-      }]
     }
+  },
+  props: {
+    list: Array
   }
 }
 </script>
