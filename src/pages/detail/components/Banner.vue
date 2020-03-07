@@ -1,19 +1,40 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg"/>
-    <div class="banner-info">
-      <div class="banner-title">八达岭长城(AAAAA景区)</div>
-      <div class="banner-number">
-        <span class="iconfont banner-icon"> &#xe692; </span>
-        39
+  <div>
+    <div class="banner" @click="handleBannerClick">
+      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg"/>
+      <div class="banner-info">
+        <div class="banner-title">八达岭长城(AAAAA景区)</div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon"> &#xe692; </span>
+          39
+        </div>
       </div>
     </div>
+    <common-gallery :imgs="imgs" v-show="showGallery" @close="handleGalleryClose"></common-gallery>
   </div>
 </template>
 
 <script>
+import CommonGallery from '@/common/gallery/Gallery.vue'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      showGallery: false,
+      imgs: ['http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg', 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg']
+    }
+  },
+  components: {
+    CommonGallery
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallery = true
+    },
+    handleGalleryClose () {
+      this.showGallery = false
+    }
+  }
 }
 </script>
 
